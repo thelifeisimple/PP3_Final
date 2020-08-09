@@ -1,0 +1,22 @@
+{% extends "layout.htm" %}
+{% block title %}Inicio{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block body %}
+
+<div style="justify-content: center;">
+  <p> <img src="../static/img/proyecto-nahual_Big.png" > </p>
+  {%if message%}
+    <div id ="message-login" class="alert alert-success" role ="alert">{{message}}</div> 
+  {%endif%}
+
+</div>
+{% endblock %}
+
+       
+
+       

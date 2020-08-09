@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block head %}
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- font - style -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet"/>
+
+  <link rel="shortcut icon" href="./static/img/favicon.ico" type="image/x-icon">
+
+  <!-- Bootstrap core CSS -->
+  <link href="./static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="./static/css/nahual-layout.css" rel="stylesheet">
+  <title>{% block title %}{% endblock %} - Nahual</title>
+  {% endblock %}
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="logo_box">
+        <img src="../static/img/proyecto-nahual-menu.png">   
+      </div>
+      {%if session['sesion-usuario']  %}
+
+      <div class="sidebar-heading"><h3>Hola {{session['sesion-nombre']}} </h3> </div>
+      <div class="list-group list-group-flush">
+        <a class="active"><h4 style="margin: 0 0 20px 0">  Administración general </h4></a> 
+        <a href="{{url_for('administrarNodos')}}" class="list-group-item list-group-item-action bg-light">Nodos</a>
+        <a href="{{url_for('administrarCursos')}}" class="list-group-item list-group-item-action bg-light">Cursos</a>
+        <a href="{{url_for('administrarProfesores')}}" class="list-group-item list-group-item-action bg-light">Profesores</a>
+        <a class="active"><h4 style="margin: 0 0 20px 0">  Administración de cursos </h4></a>
+        <a href="{{url_for('administrarAlumnos')}}" class="list-group-item list-group-item-action bg-light">Alumnos</a>
+        <a href="{{url_for('administrarCursoNodo')}}" class="list-group-item list-group-item-action bg-light">Cursos por Nodos</a>
+        <a href="{{url_for('administrarCursoAlumno')}}" class="list-group-item list-group-item-action bg-light">Cursos por Alumnos</a>
+        <a href="{{url_for('inscripcion')}}" class="list-group-item list-group-item-action bg-light">Inscribir Alumno</a>
+      </div>
+      {% endif %}
+
+          <!-- <div id="footer">
+            &copy; Copyright 2020 by Ana Maria Zuluaga for TicTicSoft. 
+          </div> -->
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      {%if session['sesion-usuario']  %}
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">Menu principal</button>
+      {% endif %}
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0"> 
+            {%if session['sesion-usuario']  %}
+            <li class="nav-item active">
+              <a class="nav-link" href="{{url_for('editarUsuario')}}">Editar Usuario<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="btn btn-outline-danger" href="{{url_for('logout')}}" >Cerrar Sesion<span class="sr-only">(current)</span></a>
+            </li>
+            {%else %}
+            <li class="nav-item active">
+              <a class="nav-link" href="{{url_for('login')}}" >Login<span class="sr-only">(current)</span></a>
+            </li>
+            {% endif %}
+
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <!-- layout inicio -->
+   <div class="container"> 
+    <div class="row">
+      
+
+        <div class="well configurator">
+                
+            <div id="result"></div>
+
+        <div id="content">{% block body %}{% endblock %}</div>
+
+    </div> <!-- row -->
+</div> <!-- container -->
+
+<!-- <div id="footer">
+  {% block footer %}
+  <div class="container"> 
+           
+    <div class="row">
+        <div  class="col-md-12">
+            <br>
+             &copy; Copyright 2020 by Ana Maria Zuluaga for TicTicSoft. 
+        </div>
+    </div>
+  </div>
+  {% endblock %}
+</div> -->
+
+   <!-- Modal -->
+   <div id="confirmModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modalTitle">Modal Header</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>¿Estado seguro de realizar la operacion?</p>
+        </div>
+        <div class="modal-footer">
+          <button data-dismiss="modal" id="btCancelar"class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+          <button id="btAceptar" name=""class="btn btn-success" data-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<!-- fin Modal-->  
+
+<!-- layout fin -->
+        
+
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="./static/vendor/jquery/jquery.min.js"></script>
+  <script src="./static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>
