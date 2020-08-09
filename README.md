@@ -1,6 +1,6 @@
 # Modulo inscripciones Nahual "For a better community" PP3_Final
 
-Este modulo fue creado ocn el fin de solucionar una problematica por volumen de inscriptos al proyecto Nahual, de forma tal que estudiera centralizada la información y se pueda administrar facilmente
+Este modulo fue creado con el fin de solucionar una problematica por volumen de inscriptos al proyecto Nahual, de forma tal que estudiera centralizada la información y se pueda administrar facilmente
 
 ##Tecnologías usadas
 
