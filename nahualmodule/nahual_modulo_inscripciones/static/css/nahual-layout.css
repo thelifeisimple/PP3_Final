@@ -1,0 +1,180 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/templates/simple-sidebar)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+
+ #wrapper {
+    overflow-x: hidden;
+ }
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  font-family: normal normal normal 22px/1.4em poppins-semibold,poppins, sans-serif !important;
+	color:#948985 !important;
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+  
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+.logo_box {
+  text-align: center;
+  padding: 25px 10px;
+}
+.bg-light{
+  font-family: normal normal normal 22px/1.4em poppins-semibold,poppins, sans-serif !important;
+  color:#948985 !important;
+  /* background-color:#CAD2C5 !important; */
+}
+.active{
+  background-color:#D8F3DC !important;
+  color: #948985 !important;
+  border-radius: 5px !important;
+}
+
+#menu-toggle{
+	color: #BEB8B6ff !important;
+	background-color: #fff !important;
+	border-color: #BEB8B6ff !important;
+}
+
+#menu-toggle:hover {
+	color: #fff !important;
+	background-color: #86D239ff !important;
+	border-color: #BEB8B6ff !important;
+}
+
+h4 {
+	font-family: normal normal normal 22px/1.4em poppins-semibold,poppins, sans-serif !important;
+	color:#948985 !important;
+	font-size: 15px !important;
+	text-align: center !important;
+}
+
+h4 .error {
+	margin-top: 2rem;
+	font-family:normal normal normal 22px/1.4em poppins-semibold,poppins, sans-serif !important;
+	font-size: 40%;
+	color: red;
+
+  }
+
+.nav-link{
+  margin: auto;
+  font-family: normal normal normal 22px/1.4em poppins-semibold,poppins, sans-serif !important;
+  color:#948985 !important;
+
+}
+
+body{
+	margin: auto;
+  font-family: normal normal normal 22px/1.4em poppins-semibold,poppins, sans-serif !important;
+  color:#948985 !important;
+	/* font-size: 40px; */
+	text-align: left;
+	background-image: url(../img/background.png) !important;
+	background-position: right bottom !important;
+	background-repeat: no-repeat;
+	background-position: right;
+	background-color: transparent !important;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn-primary{
+	color: #BEB8B6ff !important;
+	background-color: #fff !important;
+	border-color: #BEB8B6ff !important;
+
+}
+
+.btn-primary:hover {
+	color: #fff !important;
+	background-color: #86D239ff !important;
+	border-color: #BEB8B6ff !important;
+}
+
+.btn-success{
+	color: #fff !important;
+	background-color: #86D239ff  !important;
+	/* border-color: rgb(135, 243, 28)  !important; */
+}
+
+#form-login.row{
+  margin-left: 10%;
+  margin-right: -46%;
+  margin-top: 10%;
+}
+
+label {
+	margin: auto;
+	font-family: normal normal normal 22px/1.4em poppins-semibold,poppins, sans-serif;
+  font-size: 20px;
+  align-items: left;
+}
+
+#form-inscripcion{
+  padding: 25px 10px !important;
+}
+
+.formUsuario{
+  padding-left: 130px !important;
+}
+
+#div-nodos.table-responsive{
+  background: #fff;
+}
+.thead-light th {
+  color: #86D239ff !important;
+  background-color: #D8F3DC !important;
+  font-family: normal normal normal 22px/1.4em poppins-semibold,poppins, sans-serif;
+}
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: ;
+}
+
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+
+  #footer {
+    background-color: fff;
+    position: absolute;
+    bottom: 0;
+    width: 70%;
+    height: 40px;
+    color: black;
+  }
+}

@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block head %}
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- font - style -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet"/>
+
+  <link rel="shortcut icon" href="./static/img/favicon.ico" type="image/x-icon">
+
+  <!-- Bootstrap core CSS -->
+  <link href="./static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="./static/css/nahual-layout.css" rel="stylesheet">
+  <title>{% block title %}{% endblock %} - Nahual</title>
+  {% endblock %}
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+         
+  
+  
+           <div class="col-md-12" margin = "center">
+              {% if msg%}                
+                  <img src="../static/img/succes.png"><h3> {{msg}} </h3> 
+              {% endif %}
+           </div>
+          <div class="col-md-12" align="center">
+  
+          <form method="get" action="">   
+              <button type="button" onclick="fnClose();" name="action" value="cancelar" class="btn btn-primary">Cerrar</button>
+              <!-- <button type="submit" name="action" value="cancelar" class="btn btn-primary">Cerrar</button> -->
+          </form>
+      </div>
+  </div>
+  </div>    
+</body>  
+
+
+</html>
+
+<script>
+function fnClose()
+{
+    self.opener.location.reload();
+    window.close();
+}
+
+
+</script>
+
+    
+
+
+
