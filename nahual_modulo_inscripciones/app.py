@@ -229,12 +229,12 @@ def editarUsuario():
 
                 session.commit()
 
-                return redirect(url_for('administracion'))
+                return redirect(url_for('inicio'))
                 
                     
             else:
                 #cancelar
-                return redirect(url_for('administracion'))
+                return redirect(url_for('inicio'))
 
 
 # Crear usuario
@@ -333,7 +333,7 @@ def administracion():
 
     if request.method == 'GET':
         print("dentro del get administracion")
-        return render_template('administracion.htm', username= username)
+        return render_template('inicio.htm', username= username)
     else:
         if request.method == 'POST':
             print("dentro del post administracion " + request.form['action'])
